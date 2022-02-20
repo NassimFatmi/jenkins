@@ -11,5 +11,11 @@ pipeline {
       }
     }
 
+    stage('Mail Notification') {
+      steps {
+        mail(subject: 'Mail Notification', body: 'Build Done', cc: 'in_fatmi@esi.dz', from: 'in_fatmi@esi.dz')
+      }
+    }
+
   }
 }
