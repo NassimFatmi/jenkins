@@ -6,8 +6,8 @@ pipeline {
         sh 'gradle build'
         sh 'gradle javadoc'
         archiveArtifacts 'build/libs/*.jar'
-        archiveArtifacts 'build/docs/*'
-        archiveArtifacts 'build/reports/*'
+        archiveArtifacts 'build/docs/'
+        archiveArtifacts 'build/reports/'
       }
     }
 
