@@ -20,16 +20,18 @@ pipeline {
     stage('Code Analysis') {
       parallel {
         stage('Code Analysis') {
-          steps {
-            sh 'gradle sonarqube'
-          }
           post {
             success {
               mail(subject: 'Code Analysis Succussful', body: 'Fin d\'analyse avec success', cc: 'nassim.gti25@gmail.com', from: 'in_fatmi@esi.dz')
             }
+
             failure {
               mail(subject: 'Code analysis Failure', body: 'Fin avec failure', cc: 'nassim.gti25@gmail.com', from: 'in_fatmi@esi.dz')
             }
+
+          }
+          steps {
+            sh 'gradle sonarqube'
           }
         }
 
@@ -39,6 +41,12 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('Deployment') {
+      steps {
+        sh 'gradle publish'
       }
     }
 
