@@ -23,11 +23,13 @@ pipeline {
           steps {
             sh 'gradle sonarqube'
           }
-          success {
-            mail(subject: 'Code Analysis Succussful', body: 'Fin d\'analyse avec success', cc: 'nassim.gti25@gmail.com', from: 'in_fatmi@esi.dz')
-          }
-          failure {
-            mail(subject: 'Code analysis Failure', body: 'Fin avec failure', cc: 'nassim.gti25@gmail.com', from: 'in_fatmi@esi.dz')
+          post {
+            success {
+              mail(subject: 'Code Analysis Succussful', body: 'Fin d\'analyse avec success', cc: 'nassim.gti25@gmail.com', from: 'in_fatmi@esi.dz')
+            }
+            failure {
+              mail(subject: 'Code analysis Failure', body: 'Fin avec failure', cc: 'nassim.gti25@gmail.com', from: 'in_fatmi@esi.dz')
+            }
           }
         }
 
