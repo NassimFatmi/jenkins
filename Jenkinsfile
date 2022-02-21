@@ -27,7 +27,7 @@ pipeline {
 
         stage('Test Reporting') {
           steps {
-            sh 'gradle generateCucumberReports'
+            sh 'gradle cucumberCli'
           }
         }
 
