@@ -18,8 +18,19 @@ pipeline {
     }
 
     stage('Code Analysis') {
-      steps {
-        sh 'gradle sonarqube'
+      parallel {
+        stage('Code Analysis') {
+          steps {
+            sh 'gradle sonarqube'
+          }
+        }
+
+        stage('Test Reporting') {
+          steps {
+            sh 'gradle generateCucumberReports'
+          }
+        }
+
       }
     }
 
