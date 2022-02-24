@@ -23,11 +23,13 @@ pipeline {
         stage('Code Analysis') {
           post {
             success {
-              mail(subject: 'Code Analysis Succussful', body: 'Fin d\'analyse avec success', cc: 'nassim.gti25@gmail.com', from: 'in_fatmi@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec succes', cc: 'in_fatmi@esi.dz', from: 'in_fatmi@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec succes', cc: 'ks_cherfaoui@esi.dz ', from: 'in_fatmi@esi.dz')
             }
 
             failure {
-              mail(subject: 'Code analysis Failure', body: 'Fin avec failure', cc: 'nassim.gti25@gmail.com', from: 'in_fatmi@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\'echec', cc: 'in_fatmi@esi.dz', from: 'in_fatmi@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\' echec', cc: 'ks_cherfaoui@esi.dz ', from: 'in_fatmi@esi.dz')
             }
 
           }
