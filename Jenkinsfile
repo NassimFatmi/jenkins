@@ -14,7 +14,7 @@ pipeline {
     stage('Mail Notification') {
       steps {
         mail(subject: 'TP Jenkins Fin de build', body: 'Build Done', cc: 'kb_kihal@esi.dz', from: 'kb_kihal@esi.dz')
-        mail(subject: 'TP Jenkins Fin de build', body: 'Build done', cc: 'ks_cherfaoui@esi.dz ', from: 'kb_kihal@esi.dz')
+        mail(subject: 'TP Jenkins Fin de build', body: 'Build done', cc: 'hd_laib@esi.dz', from: 'kb_kihal@esi.dz')
       }
     }
 
@@ -29,7 +29,7 @@ pipeline {
 
             failure {
               mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\'echec', cc: 'kb_kihal@esi.dz', from: 'kb_kihal@esi.dz')
-              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\' echec', cc: 'ks_cherfaoui@esi.dz ', from: 'kb_kihal@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\' echec', cc: 'hd_laib@esi.dz', from: 'kb_kihal@esi.dz')
             }
 
           }
