@@ -13,8 +13,8 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        mail(subject: 'TP Jenkins Fin de build', body: 'Build Done', cc: 'kb_kihal@esi.dz', from: 'kb_kihal@esi.dz')
-        mail(subject: 'TP Jenkins Fin de build', body: 'Build done', cc: 'hd_laib@esi.dz', from: 'kb_kihal@esi.dz')
+        mail(subject: 'TP Jenkins Fin de build', body: 'Build Done', cc: 'in_fatmi@esi.dz', from: 'in_fatmi@esi.dz')
+        mail(subject: 'TP Jenkins Fin de build', body: 'Build done', cc: 'ks_cherfaoui@esi.dz ', from: 'in_fatmi@esi.dz')
       }
     }
 
@@ -23,13 +23,13 @@ pipeline {
         stage('Code Analysis') {
           post {
             success {
-              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec succes', cc: 'kb_kihal@esi.dz', from: 'kb_kihal@esi.dz')
-              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec succes', cc: 'hd_laib@esi.dz', from: 'kb_kihal@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec succes', cc: 'in_fatmi@esi.dz', from: 'in_fatmi@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec succes', cc: 'ks_cherfaoui@esi.dz ', from: 'in_fatmi@esi.dz')
             }
 
             failure {
-              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\'echec', cc: 'kb_kihal@esi.dz', from: 'kb_kihal@esi.dz')
-              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\' echec', cc: 'hd_laib@esi.dz', from: 'kb_kihal@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\'echec', cc: 'in_fatmi@esi.dz', from: 'in_fatmi@esi.dz')
+              mail(subject: 'Analyse de Code', body: 'Fin de l\'analyse de code avec un statu d\' echec', cc: 'ks_cherfaoui@esi.dz ', from: 'in_fatmi@esi.dz')
             }
 
           }
